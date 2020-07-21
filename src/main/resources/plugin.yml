@@ -1,0 +1,5 @@
+main: com.github.rainhon.webchat.WebChat
+version: 0.0.1
+name: webchat
+authors: [rainhon]
+api-version: 1.13
