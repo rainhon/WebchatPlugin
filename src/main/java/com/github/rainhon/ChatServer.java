@@ -22,6 +22,8 @@ public class ChatServer extends WebSocketServer {
 
     @Override
     public void onOpen( WebSocket conn, ClientHandshake handshake ) {
+
+
         JsonObject messageJson = new JsonObject();
         messageJson.addProperty("from", "服务器");
         messageJson.addProperty("content", "您已连接到服务器聊天系统");

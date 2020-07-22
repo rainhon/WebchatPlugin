@@ -18,14 +18,16 @@ public class WebChat extends JavaPlugin {
     public void onEnable() {
         super.onEnable();
 
-        new Thread(()->{
+        Thread t = new Thread(()->{
             try{
                 chatServer = new ChatServer(7000, this);
                 chatServer.start();
             }catch (UnknownHostException e){
                 Bukkit.getLogger().info(e.getLocalizedMessage());
             }
-        }).start();
+        });
+        t.setDaemon(true);
+        t.start();
 
         this.getServer().getPluginManager().registerEvents(new Listener() {
             @EventHandler
